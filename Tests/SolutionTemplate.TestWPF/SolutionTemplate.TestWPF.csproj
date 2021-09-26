@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathCore.Hosting.WPF" Version="0.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SolutionTemplate.Domain\SolutionTemplate.Domain.csproj" />
+    <ProjectReference Include="..\..\Data\SolutionTemplate.DAL.Sqlite\SolutionTemplate.DAL.Sqlite.csproj" />
+    <ProjectReference Include="..\..\Data\SolutionTemplate.DAL.SqlServer\SolutionTemplate.DAL.SqlServer.csproj" />
+    <ProjectReference Include="..\..\Services\SolutionTemplate.Services\SolutionTemplate.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Styles\Default.Buttons.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

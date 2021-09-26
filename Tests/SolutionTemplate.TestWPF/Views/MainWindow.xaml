@@ -1,0 +1,26 @@
+﻿<Window x:Class="SolutionTemplate.TestWPF.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:SolutionTemplate.TestWPF.Views"
+        DataContext="{Binding MainModel, Source={StaticResource Locator}}"
+        Title="{Binding Title}"
+        Width="800" Height="450">
+    <DockPanel>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Command="{StaticResource CloseWindowCommand}"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar>
+            <StatusBarItem DockPanel.Dock="Right">
+                <ResizeGrip/>
+            </StatusBarItem>
+            <StatusBarItem Content="Готов."/>
+        </StatusBar>
+        <Grid>
+
+        </Grid>
+    </DockPanel>
+</Window>

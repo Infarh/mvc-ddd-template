@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\site.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.HealthChecks" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.3.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SolutionTemplate.Domain\SolutionTemplate.Domain.csproj" />
+    <ProjectReference Include="..\..\Data\SolutionTemplate.DAL.Sqlite\SolutionTemplate.DAL.Sqlite.csproj" />
+    <ProjectReference Include="..\..\Data\SolutionTemplate.DAL.SqlServer\SolutionTemplate.DAL.SqlServer.csproj" />
+    <ProjectReference Include="..\..\Data\SolutionTemplate.DAL\SolutionTemplate.DAL.csproj" />
+    <ProjectReference Include="..\..\Services\SolutionTemplate.Services\SolutionTemplate.Services.csproj" />
+  </ItemGroup>
+
+</Project>

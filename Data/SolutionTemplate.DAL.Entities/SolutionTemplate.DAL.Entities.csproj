@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\SolutionTemplate.Interfaces.Base\SolutionTemplate.Interfaces.Base.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,37 @@
+  
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "shmachilin@gmail.com",
+  "classifications": [ "Solution/MVC" ], 
+  "name": "DDD solution MVC",
+  "identity": "ddd-mvc",         
+  "groupIdentity":"DDD",
+  "shortName": "ddd-mvc",
+  "tags": {
+    "language": "C#",
+    "type":"project"
+  },
+  "sourceName": "SolutionTemplate",
+  "preferNameDirectory": true,
+  "symbols":{
+    "copyrightName": {
+      "type": "parameter",
+      "defaultValue": "John Smith",
+      "replaces":"Contoso"
+    },
+    "title": {
+      "type": "parameter",
+      "defaultValue": "Hello World from dotnet new",
+      "replaces":"Hello World"
+    }
+  },
+   "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [ "register.bat", "unregister.bat", "**/wwwroot/**", "**/bin/**", "**/obj/**", "**/.vs/**", "**/_ReSharper.Caches/**" ]
+        }
+      ]
+    }
+  ]
+}

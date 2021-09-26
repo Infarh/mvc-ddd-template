@@ -1,0 +1,17 @@
+﻿<ApplicationHosting x:Class="SolutionTemplate.TestWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:l="clr-namespace:SolutionTemplate.TestWPF"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Default.xaml"/>
+                <ResourceDictionary Source="/Commands/AppCommands.xaml"/>
+                <ResourceDictionary Source="/Converters/AppConverters.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <l:ServiceLocator x:Key="Locator"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</ApplicationHosting>

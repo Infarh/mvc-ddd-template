@@ -1,0 +1,8 @@
+[
+  {
+    "inputFiles": [
+      "Styles/site.css"
+    ],
+    "outputFileName": "wwwroot/css/site.css"
+  }
+]
