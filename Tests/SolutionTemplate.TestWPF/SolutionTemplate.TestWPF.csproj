@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MathCore.Hosting.WPF" Version="0.0.4" />
+    <PackageReference Include="MathCore.Hosting.WPF" Version="0.0.4.3" />
   </ItemGroup>
 
   <ItemGroup>
