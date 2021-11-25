@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading.Tasks" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MathCore.Hosting" Version="0.0.1.2" />
   </ItemGroup>
 

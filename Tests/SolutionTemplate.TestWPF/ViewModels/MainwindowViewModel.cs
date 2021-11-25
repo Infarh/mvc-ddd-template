@@ -2,14 +2,13 @@
 using MathCore.WPF.ViewModels;
 using SolutionTemplate.TestWPF.Services.Interfaces;
 
-namespace SolutionTemplate.TestWPF.ViewModels
-{
-    [Service]
-    public class MainwindowViewModel : TitledViewModel
-    {
-        public MainwindowViewModel() => Title = "Главное окно";
+namespace SolutionTemplate.TestWPF.ViewModels;
 
-        [Inject]
-        public IUserDialog UserDialog { get; init; }
-    }
+[Service]
+public class MainwindowViewModel : TitledViewModel
+{
+    public MainwindowViewModel() => Title = "Главное окно";
+
+    [Inject]
+    public IUserDialog UserDialog { get; init; }
 }

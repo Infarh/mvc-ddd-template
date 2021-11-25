@@ -1,7 +1,6 @@
-﻿namespace SolutionTemplate.TestWPF.Views
+﻿namespace SolutionTemplate.TestWPF.Views;
+
+public partial class MainWindow
 {
-    public partial class MainWindow
-    {
-        public MainWindow() => InitializeComponent();
-    }
+    public MainWindow() => InitializeComponent();
 }

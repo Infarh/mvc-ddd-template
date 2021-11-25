@@ -8,4 +8,10 @@
     <ProjectReference Include="..\..\Services\SolutionTemplate.Interfaces.Base\SolutionTemplate.Interfaces.Base.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading.Tasks" />
+  </ItemGroup>
+
 </Project>

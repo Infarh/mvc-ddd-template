@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading.Tasks" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MathCore.Hosting.WPF" Version="0.0.4.3" />
   </ItemGroup>
 

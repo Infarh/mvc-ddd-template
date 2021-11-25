@@ -6,45 +6,44 @@ using Microsoft.Extensions.Hosting;
 using SolutionTemplate.DAL.Sqlite;
 using SolutionTemplate.DAL.SqlServer;
 
-namespace SolutionTemplate.TestConsole
+namespace SolutionTemplate.TestConsole;
+
+internal class Program
 {
-    internal class Program
+    private static IHost __Hosting;
+
+    public static IHost Hosting => __Hosting ??= CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
+
+    public static IHostBuilder CreateHostBuilder(string[] args) => Host
+       .CreateDefaultBuilder(args)
+       .ConfigureServices(ConfigureServices);
+
+    private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
     {
-        private static IHost __Hosting;
-
-        public static IHost Hosting => __Hosting ??= CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
-
-        public static IHostBuilder CreateHostBuilder(string[] args) => Host
-           .CreateDefaultBuilder(args)
-           .ConfigureServices(ConfigureServices);
-
-        private static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
+        var db_type = host.Configuration["Database"];
+        switch (db_type)
         {
-            var db_type = host.Configuration["Database"];
-            switch (db_type)
-            {
-                default: throw new NotSupportedException($"Тип БД {db_type} не поддерживается");
+            default: throw new NotSupportedException($"Тип БД {db_type} не поддерживается");
 
-                case "SqlServer":
-                    services.AddSolutionTemplateDbContextFactorySqlServer(host.Configuration.GetConnectionString(db_type));
-                    break;
+            case "SqlServer":
+                services.AddSolutionTemplateDbContextFactorySqlServer(host.Configuration.GetConnectionString(db_type));
+                break;
 
-                case "Sqlite":
-                    services.AddSolutionTemplateDbContextFactorySqlite(host.Configuration.GetConnectionString(db_type));
-                    break;
-            }
+            case "Sqlite":
+                services.AddSolutionTemplateDbContextFactorySqlite(host.Configuration.GetConnectionString(db_type));
+                break;
         }
+    }
 
-        public static async Task Main(string[] args)
-        {
-            using var host = Hosting;
-            await host.StartAsync();
+    public static async Task Main(string[] args)
+    {
+        using var host = Hosting;
+        await host.StartAsync();
 
-            Console.WriteLine("Hello World!");
+        Console.WriteLine("Hello World!");
 
-            await host.StopAsync();
+        await host.StopAsync();
 
-            Console.WriteLine("Completed.");
-        }
+        Console.WriteLine("Completed.");
     }
 }

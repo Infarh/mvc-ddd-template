@@ -1,10 +1,9 @@
 ﻿using MathCore.Hosting.WPF;
 using SolutionTemplate.TestWPF.ViewModels;
 
-namespace SolutionTemplate.TestWPF
+namespace SolutionTemplate.TestWPF;
+
+public class ServiceLocator : ServiceLocatorHosted
 {
-    public class ServiceLocator : ServiceLocatorHosted
-    {
-        public MainwindowViewModel MainModel => GetRequiredService<MainwindowViewModel>();
-    }
+    public MainwindowViewModel MainModel => GetRequiredService<MainwindowViewModel>();
 }

@@ -1,29 +1,22 @@
 using FluentValidation;
 
 using MediatR;
-
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using SolutionTemplate.DAL.Context;
 using SolutionTemplate.DAL.Sqlite;
 using SolutionTemplate.DAL.SqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
-var configuration = builder.Configuration;
 var services = builder.Services;
 
-var db_type = configuration["Database"];
-switch (db_type)
+switch (builder.Configuration["Database"])
 {
     case "SqlServer":
-        services.AddSolutionTemplateDbContextSqlServer(configuration.GetConnectionString(db_type));
+        services.AddSolutionTemplateDbContextSqlServer(builder.Configuration.GetConnectionString(builder.Configuration["Database"]));
         break;
 
     case "Sqlite":
-        services.AddSolutionTemplateDbContextSqlite(configuration.GetConnectionString(db_type));
+        services.AddSolutionTemplateDbContextSqlite(builder.Configuration.GetConnectionString(builder.Configuration["Database"]));
         break;
 }
 
